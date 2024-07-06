@@ -28,4 +28,20 @@ pipeline{
             }
         }
     }
+    post{
+        success{
+            archiveArtifacts artifacts: '**/*.jar'
+            junit testResults: '**/TEST-*.xml'
+            mail subject: 'Build stage succesful'
+                 from: 'qtdevops@learningthought.io'
+                 to: 'all@learningthought.io'
+                 body: 'Refer $BUILD_URL for more details'
+        }
+        failure{
+            mail subject: 'Build stage failed'
+                 from: 'qtdevops@learningthought.io'
+                 to: 'all@learningthought.io'
+                 body: 'Refer $BUILD_URL for more details'
+        }
+    }
 }
