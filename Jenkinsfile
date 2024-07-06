@@ -15,7 +15,7 @@ pipeline{
     stages{
         stage("git"){
             steps{
-                git url: 'https://github.com/Ashfaq09/spring-petclinic-docker.git' ,
+                git url: 'https://github.com/Ashfaq47/spring-petclinic.git' ,
                     branch: 'release'
             }
         }
