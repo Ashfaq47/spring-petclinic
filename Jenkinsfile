@@ -41,5 +41,5 @@ pipeline{
                  to: 'all@learningthought.io' ,
                  body: 'Refer ${env.BUILD_URL} for more details'
         }
-    
+    }
 }
