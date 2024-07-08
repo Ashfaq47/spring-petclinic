@@ -27,7 +27,7 @@ pipeline{
         }
     }
     post{
-        success{
+        success {
             archiveArtifacts artifacts: '**/*.jar'
             junit testResults: '**/TEST-*.xml'
             mail subject: 'Build stage succesful' ,
@@ -35,7 +35,7 @@ pipeline{
                  to: 'all@learningthought.io' ,
                  body: 'Refer $BUILD_URL for more details'
         }
-        failure{
+        failure {
             mail subject: 'Build stage failed' ,
                  from: 'qtdevops@learningthought.io' ,
                  to: 'all@learningthought.io' ,
