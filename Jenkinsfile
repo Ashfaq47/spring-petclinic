@@ -31,14 +31,14 @@ pipeline{
             junit testResults: '**/TEST-*.xml'
             mail subject: 'build stage succeeded' ,
                  from:'qtdevops@learningthought.io' ,
-                 to:'all@leanringthought.io' ,
-                 body: 'Refer $BUILD_URL for more details'
+                 to:'all@learningthought.io' ,
+                 body: 'Refer ${env.BUILD_URL} for more details'
         }
         failure{
             mail subject: 'build stage failed' ,
                  from:'qtdevops@learningthought.io' ,
                  to:'all@learningthought.io' ,
-                 body:'Refer $BUILD_URL for more details'
+                 body:'Refer ${env.BUILD_URL} for more details'
         }        
     }
 }
